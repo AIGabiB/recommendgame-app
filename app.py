@@ -8,7 +8,7 @@ st.set_page_config(page_title="Steam Game Recommender", page_icon="🎮")
 @st.cache_data
 def load_data():
     # Här laddar vi den sparade top-k DataFrame:n
-    return pd.read_csv("steam_top_similarity_df.csv", index_col=0)
+    return pd.read_pickle("steam_top_similarity_df.pkl")
 
 try:
     top_games_df = load_data()
